@@ -6,5 +6,3 @@ the scripts are organized by tools
 
 
 run `deployer/deployer` to deploy utilities to your path
-
-

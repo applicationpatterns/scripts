@@ -1,0 +1,29 @@
+usage() {
+  echo "$0 command args"
+  echo "  rcsd runs the specified command (along with the args) in the subdirectories"
+  echo "  make sure there is file .subdirs with all the subdirectories you are interested in running commands "
+  exit 1
+}
+
+if [ $# -eq 0 ]
+then
+  usage
+  echo hey there
+fi
+
+echo for directories mentioned in file .subdirs the following command is executed
+echo $*
+echo "====================================================================="
+for dir in `cat .subdirs`
+do
+  echo "processing directory $dir"
+  cd $dir
+  
+  $*
+
+  cd ..
+
+  echo "====================================================================="
+done
+
+

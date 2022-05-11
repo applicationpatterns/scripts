@@ -1,0 +1,15 @@
+TARGET=~/bin
+
+mkdir -p ${TARGET}
+
+cd shell_utils/bin
+pwd
+utils=rcsd
+for u in $utils
+do
+  rm -f ${TARGET}/rcsd
+  cp rcsd ${TARGET}/rcsd
+done
+
+echo deployed $utils to ${TARGET}
+echo make sure ${TARGET} exists in your PATH variable
